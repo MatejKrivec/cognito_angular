@@ -1,19 +1,9 @@
-<amplify-authenticator [loginMechanisms]="['email']" [signUpAttributes]="['name']" [formFields]="formFields">
-  <ng-template
-    amplifySlot="authenticated"
-    let-user="user"
+<amplify-authenticator [loginMechanisms]="['email']" [formFields]="formFields" [signUpAttributes]="['name']">
+  <ng-template 
+    amplifySlot="authenticated" 
+    let-user="user" 
     let-signOut="signOut"
   >
-    <h1>Welcome {{ user.username }}!</h1>
-    <button (click)="signOut()">Sign Out</button>
-  </ng-template>
-  <ng-template
-    amplifySlot="sign-in"
-    let-signIn="signIn"
-  >
-    <form (ngSubmit)="signIn()">
-      <!-- Your sign-in form fields here -->
-      <button type="submit">Sign In</button>
-    </form>
+    <router-outlet></router-outlet>
   </ng-template>
 </amplify-authenticator>

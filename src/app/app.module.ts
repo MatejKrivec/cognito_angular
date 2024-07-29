@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Amplify } from 'aws-amplify';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
-
+import { HomePageComponent } from './home-page/home-page.component';
 
 Amplify.configure({
   Auth: {
     Cognito: {
-      userPoolId: 'us-east-1_lb3n6cdaK',
-      userPoolClientId: '6gs5ar8gmebe8otni6kuipr7fh'
+      userPoolId: 'us-east-1_7LChvX55T',
+      userPoolClientId: '31gc1h8lhhu3pi0pomvrqv3ni9'
     }
   }
 });
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule, 
     AmplifyAuthenticatorModule
   ],
   providers: [],

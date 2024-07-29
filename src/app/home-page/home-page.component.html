@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="content">
+      <h1>Welcome user: {{ user?.username }}!</h1>
+      <h1>Full Name: {{ fullName }}</h1>
+      <h1>Email: {{ email }}</h1>
+      <br>
+      <h1>Token details</h1>
+      <h2>ID Token Payload:</h2>
+      <pre>{{ idTokenPayload | json }}</pre>
+      <h2>Access Token Payload:</h2>
+      <pre>{{ accessTokenPayload | json }}</pre>
+      <h2>Refresh Token:</h2>
+      <pre class="refreshToken">{{ refreshToken | json }}</pre>
+      <button (click)="signOut()">Sign Out</button>
+    </div>
+  </div>

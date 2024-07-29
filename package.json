@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@aws-amplify/auth": "^6.3.11",
     "@aws-amplify/ui-angular": "^5.0.18",
     "@types/crypto-js": "^4.2.2",
     "aws-amplify": "^6.4.3",
