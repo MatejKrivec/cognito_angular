@@ -1,9 +1,18 @@
-<amplify-authenticator [loginMechanisms]="['email']" [formFields]="formFields" [signUpAttributes]="['name']">
-  <ng-template 
-    amplifySlot="authenticated" 
-    let-user="user" 
-    let-signOut="signOut"
-  >
+<h1>AESTIMO</h1>
+<amplify-authenticator [formFields]="formFields" [signUpAttributes]="['name']" [loginMechanisms]="['email']" [hideSignUp]="true">
+  <ng-template amplifySlot="header">
+    <h1>LOGIN</h1>
+    <div>
+      <label for="languageSelect">Choose your language:</label>
+      <select id="languageSelect" (change)="onLanguageChange($event)" [value]="currentLanguage">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <!-- Add more languages as needed -->
+      </select>
+    </div>
+  </ng-template>
+  <ng-template amplifySlot="authenticated" let-user="user" let-signOut="signOut">
     <router-outlet></router-outlet>
   </ng-template>
 </amplify-authenticator>
